@@ -1,0 +1,9 @@
+sources:
+  "1.5.2":
+    url: "https://github.com/eclipse-uprotocol/uprotocol-core-api/archive/refs/tags/uprotocol-core-api-1.5.2.tar.gz"
+    sha256: "2b1271bba8f85a71ae5a162368c41d4fdd09745f19a928444dd2177d1c71c7e8"
+  # "1.5.conan":
+  #   url: "https://github.com/eclipse-uprotocol/uprotocol-core-api.git"
+  #   commit: "conan"
+
+    
