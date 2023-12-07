@@ -1,11 +1,8 @@
 import os
 from pathlib import Path
 from conans import ConanFile, tools
-from conan.tools.scm import Git
 
 required_conan_version = ">=1.33.0"
-
-
 class uProtocolCoreApiConan(ConanFile):
     name = "uprotocol-core-api"
     license = "Apache-2.0"
@@ -23,15 +20,8 @@ class uProtocolCoreApiConan(ConanFile):
         tools.get(**self.conan_data["sources"][self.version], destination=self._source_subfolder,
                   strip_root=True)
 
-        # git = Git(self)
-        # sources = self.conan_data["sources"][self.version]
-        # self.output.info(f"Cloning sources from: {sources}")
-        # git.clone(url=sources["url"], target=self._source_subfolder)
-        # os.chdir(self._source_subfolder)
-        # git.checkout(commit=sources["commit"])
-
     def package(self):
-        # self.copy("LICENSE", dst="licenses", src=self._source_subfolder)
+        self.copy("LICENSE", dst="licenses", src=self._source_subfolder)
         self.copy("*.proto", dst="res", src=self._source_subfolder)
         # satisfy KB-H014 (header_only recipes require headers)
         tools.save(os.path.join(self.package_folder, "include", "dummy_header.h"), "\n")
